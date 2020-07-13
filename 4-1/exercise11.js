@@ -28,4 +28,4 @@ if (salarioBase <= 1903.98) {
 
 let salarioLiquido = salarioBase - aliquotaIR;
 
-console.log(salarioLiquido);
+console.log("O salário líquido é de " + salarioLiquido);
