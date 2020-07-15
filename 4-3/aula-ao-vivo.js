@@ -1,7 +1,7 @@
-let posicaoRainhaLinha = 3;
-let posicaoRainhaColuna = 2;
+let posicaoRainhaLinha = 4;
+let posicaoRainhaColuna = 4;
 
-let posicaoPecaLinha = 2;
+let posicaoPecaLinha = 7;
 let posicaoPecaColuna = 1;
 
 let tamanhoXadrez = 8;
