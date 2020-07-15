@@ -1,9 +1,9 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let sum = 0;
 let maxNumber = 0;
-let minNumber = 1000000;
-let evenNumbers = 0;
-
+let totalNumbers = 0;
+let minNumber;
+let oddNumbers = 0;
 console.log("Exercicio 1 - Imprimir numeros do array: ")
 
 for (let number of numbers) {
@@ -13,13 +13,18 @@ for (let number of numbers) {
   if(number > maxNumber) {
     maxNumber = number;
   }
-
+  if(totalNumbers === 0) {
+    totalNumbers += 1;
+    minNumber = number;
+  } else {
+    totalNumbers +=1;
+  }
   if(number < minNumber) {
     minNumber = number;
   }
 
   if(number % 2 === 1) {
-    evenNumbers++; 
+    oddNumbers++; 
   }
 }
 
@@ -37,10 +42,10 @@ if (avgSum > 20) {
 
 console.log("Exercicio 5 - Maior valor = " + maxNumber);
 
-if(evenNumbers === 0) {
+if(oddNumbers === 0) {
   console.log("Exercicio 6 - Valores impares = Nenhum valor impar encontrado"); 
 } else {
-  console.log("Exercicio 6 - Valores impares = " + evenNumbers); 
+  console.log("Exercicio 6 - Valores impares = " + oddNumbers); 
 }
 
 console.log("Exercicio 7 - Menor valor = " + minNumber);
