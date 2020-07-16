@@ -87,4 +87,4 @@ console.log("Exercicio 5:")
 console.log(array4 + " -> most ocorrance: " + mostOcorrence(array4));
 
 console.log("Exercicio 6:")
-console.log("N = " + N + " -> most ocorrance: " + sumArray(N));
+console.log("N = " + N + " -> sum of N numbers: " + sumArray(N));
