@@ -64,11 +64,32 @@ function sumArray(number) {
   return sum;
 }
 
+function verificaFimPalavra(word, ending) {
+  let endSize = ending.length;
+  let match = false;
+
+  word = word.slice(-endSize);
+  let lettersWord = word.split("");
+  let lettersEnd = ending.split("");
+
+  for (let index in lettersWord) { 
+    if (lettersWord[index] === lettersEnd[index]) {
+      match = true; 
+    } else {
+      return false;
+    }
+  }
+
+  return match;
+}
+
 let array = [2, 3, 6, 7, 10, 1];
 let array2 = [2, 4, 6, 7, 10, 0, -3];
 let array3 = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 let array4 = [2, 3, 2, 5, 8, 2, 3];
 let N = 6;
+let word = "trybe", ending = "be";
+
 
 console.log("Exercicio 1:")
 console.log(verificaPalindrome('arara'));
@@ -88,3 +109,6 @@ console.log(array4 + " -> most ocorrance: " + mostOcorrence(array4));
 
 console.log("Exercicio 6:")
 console.log("N = " + N + " -> sum of N numbers: " + sumArray(N));
+
+console.log("Exercicio 7:")
+console.log("Strings " + word + ", " + ending + " -> " + verificaFimPalavra(word, ending));
