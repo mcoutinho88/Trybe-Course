@@ -23,6 +23,15 @@ function indexOfLowestValue(arr) {
   return arr.indexOf(highestValue);
 }
 
+function longestString(arr) {
+  let size = [];
+  for (let i in arr) {
+    size[i] = arr[i].length;
+  }
+  let indexName = size.indexOf(Math.max(...size));
+  return arr[indexName];
+}
+
 let array = [2, 3, 6, 7, 10, 1];
 let array2 = [2, 4, 6, 7, 10, 0, -3];
 let array3 = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
@@ -36,4 +45,7 @@ console.log(array + " -> index of highest value: " + indexOfHighestValue(array))
 
 console.log("Exercicio 3:")
 console.log(array2 + " -> index of lowest value: " + indexOfLowestValue(array2));
+
+console.log("Exercicio 4:")
+console.log(array3 + " -> longest name: " + longestString(array3));
 
