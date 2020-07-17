@@ -1,8 +1,8 @@
 let posicaoRainhaLinha = 4;
-let posicaoRainhaColuna = 4;
+let posicaoRainhaColuna = 5;
 
-let posicaoPecaLinha = 7;
-let posicaoPecaColuna = 1;
+let posicaoPecaLinha = 5;
+let posicaoPecaColuna = 3;
 
 let tamanhoXadrez = 8;
 
@@ -26,20 +26,35 @@ if(!ataqueConfirmado) {
     linhaDiagDirRainha -= 1;
     colunaDiagDirRainha += 1;
 
+    if (linhaDiagEsqRainha > tamanhoXadrez && colunaDiagEsqRainha > tamanhoXadrez) {
+      linhaDiagEsqRainha = 1;
+      colunaDiagEsqRainha = 1;
+    }
+
     if (linhaDiagEsqRainha > tamanhoXadrez) {
       linhaDiagEsqRainha = 1;
+      colunaDiagEsqRainha = tamanhoXadrez - colunaDiagEsqRainha; 
     }
     
     if (colunaDiagEsqRainha > tamanhoXadrez) {
       colunaDiagEsqRainha = 1;
+      linhaDiagEsqRainha = tamanhoXadrez - linhaDiagEsqRainha; 
+
+    }
+
+    if (linhaDiagDirRainha < 1 && colunaDiagDirRainha > tamanhoXadrez) {
+      linhaDiagDirRainha = tamanhoXadrez;
+      colunaDiagDirRainha = 1;
     }
 
     if (linhaDiagDirRainha < 1) {
       linhaDiagDirRainha = tamanhoXadrez;
+      colunaDiagDirRainha = colunaDiagDirRainha - tamanhoXadrez;
     }
 
     if (colunaDiagDirRainha > tamanhoXadrez) {
       colunaDiagDirRainha = 1;
+      linhaDiagDirRainha = tamanhoXadrez - linhaDiagDirRainha; 
     }
 
     // console.log("linhaDiagEsqRainha: " + linhaDiagEsqRainha);
