@@ -91,24 +91,24 @@ let N = 6;
 let word = "trybe", ending = "be";
 
 
-console.log("Exercicio 1:")
+console.log("Exercicio 1:");
 console.log(verificaPalindrome('arara'));
 console.log(verificaPalindrome('desenvolvimento'));
 
-console.log("Exercicio 2:")
+console.log("Exercicio 2:");
 console.log(array + " -> index of highest value: " + indexOfHighestValue(array));
 
-console.log("Exercicio 3:")
+console.log("Exercicio 3:");
 console.log(array2 + " -> index of lowest value: " + indexOfLowestValue(array2));
 
-console.log("Exercicio 4:")
+console.log("Exercicio 4:");
 console.log(array3 + " -> longest name: " + longestString(array3));
 
-console.log("Exercicio 5:")
+console.log("Exercicio 5:");
 console.log(array4 + " -> most ocorrance: " + mostOcorrence(array4));
 
-console.log("Exercicio 6:")
+console.log("Exercicio 6:");
 console.log("N = " + N + " -> sum of N numbers: " + sumArray(N));
 
-console.log("Exercicio 7:")
+console.log("Exercicio 7:");
 console.log("Strings " + word + ", " + ending + " -> " + verificaFimPalavra(word, ending));
