@@ -110,7 +110,6 @@
         mainContent.appendChild(h3);
       }
 
-
       // 1 - 2
       document.querySelector('h1').className = 'title';
 
@@ -121,7 +120,20 @@
       ));
 
       // 3 - 2
+      const left = document.querySelector('.left-content');
+      const parentOfLeft = left.parentElement;
+      parentOfLeft.removeChild(left);
+
+      // 4 - 2
+      const right = document.querySelector('.right-content');
+      right.style.marginRight = 'auto';
+
+      // 5 - 2
+      const center = document.querySelector('.center-content');
+      center.style.backgroundColor = 'green';
+
       
+
     </script>
   </body>
 </html>
