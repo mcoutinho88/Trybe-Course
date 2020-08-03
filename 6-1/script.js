@@ -4,6 +4,19 @@ const states = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA',
   'RS', 'SC', 'SE', 'SP', 'TO'];
 const submitBtn = document.querySelector('button[type = submit]');
 const resetBtn = document.querySelector('button[type = reset]');
+var picker = new Pikaday({ 
+  field: document.getElementById('datepicker'), 
+  format: 'D/M/YYYY',
+  toString(date, format) {
+    // you should do formatting based on the passed format,
+    // but we will just return 'D/M/YYYY' for simplicity
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+},
+});
+
 
 const selectState = (state) => {
   state.forEach(function (item) {
@@ -27,8 +40,9 @@ const getAllInputs = () => {
   const inputRadio = document.querySelectorAll('input[type=radio]');
   const inputTextArea = document.querySelector('textarea');
   const inputSelect = document.querySelector('select').selectedOptions[0].value;
+  
 
-  for(let i = 0; i < inputTexts.length; i += 1) {
+  for(let i = 0; i < inputTexts.length - 1; i += 1) {
     let input = {
       label: inputTexts[i].labels[0].innerHTML,
       value:  inputTexts[i].value,
@@ -53,6 +67,8 @@ const getAllInputs = () => {
     value: inputTextArea.value,
   };
   allInputs.push(textarea);
+
+  allInputs.push({ label: 'Data do inicio: ', value: picker.toString() });
 
   return allInputs;
 }
