@@ -6,7 +6,7 @@ const submitBtn = document.querySelector('button[type = submit]');
 const resetBtn = document.querySelector('button[type = reset]');
 
 const selectState = (state) => {
-  state.forEach((item) => {
+  state.forEach(function (item) {
     const optionEl = document.createElement('option');
     optionEl.innerHTML = item;
     optionEl.value = item;
@@ -14,12 +14,12 @@ const selectState = (state) => {
   })
 };
 
-const parseDate = (date) => {
-  let day = date.slice(-2);
-  let month = date.slice(5, 7);
-  let year = date.slice(0, 4);
-  return { label: 'Data do inicio:', value: `${day}-${month}-${year}`};
-}
+// const parseDate = (date) => {
+//   let day = date.slice(-2);
+//   let month = date.slice(5, 7);
+//   let year = date.slice(0, 4);
+//   return { label: 'Data do inicio:', value: `${day}-${month}-${year}`};
+// }
 
 const getAllInputs = () => {
   const allInputs = [];
@@ -27,7 +27,6 @@ const getAllInputs = () => {
   const inputRadio = document.querySelectorAll('input[type=radio]');
   const inputTextArea = document.querySelector('textarea');
   const inputSelect = document.querySelector('select').selectedOptions[0].value;
-  const inputDate = document.querySelector('input[type=date]').value;
 
   for(let i = 0; i < inputTexts.length; i += 1) {
     let input = {
@@ -44,7 +43,6 @@ const getAllInputs = () => {
       let radio = {
         label: inputRadio[i].labels[0].innerHTML,
         value: inputRadio[i].value,
-        isRadio: true,
       };
       allInputs.push(radio);
     }
@@ -53,11 +51,9 @@ const getAllInputs = () => {
   let textarea = {
     label: inputTextArea.labels[0].innerHTML,
     value: inputTextArea.value,
-    isTextArea: true,
   };
   allInputs.push(textarea);
 
-  allInputs.push(parseDate(inputDate));
   return allInputs;
 }
 
@@ -65,7 +61,7 @@ const renderOutput = (inputs) => {
   const renderOutputDiv = document.querySelector('#render-output');
 
   for (let i = 0; i < inputs.length; i += 1) {
-    renderOutputDiv.innerHTML += `<div><p><strong>${inputs[i].label}</strong>  ${inputs[i].value}</p>`;
+    renderOutputDiv.innerHTML += `<div><p><strong>${inputs[i].label}</strong>  ${inputs[i].value}</p></div>`;
   }
 };
 
@@ -77,7 +73,7 @@ submitBtn.addEventListener('click', (event) => {
   renderOutput(allInputs);
 });
 
-resetBtn.addEventListener('click', (event) => {
+resetBtn.addEventListener('click', () => {
   const renderOutputDiv = document.querySelector('#render-output');
 
   renderOutputDiv.innerHTML = '';
