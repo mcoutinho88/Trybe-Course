@@ -1,8 +1,9 @@
 const selectEl = document.querySelector('#state');
-const estados = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 
+const states = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 
   'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 
   'RS', 'SC', 'SE', 'SP', 'TO'];
-const submitBtn = document.querySelector('button');
+const submitBtn = document.querySelector('button[type = submit]');
+const resetBtn = document.querySelector('button[type = reset]');
 
 const selectState = (state) => {
   state.forEach((item) => {
@@ -60,13 +61,28 @@ const getAllInputs = () => {
   return allInputs;
 }
 
+const renderOutput = (inputs) => {
+  const renderOutputDiv = document.querySelector('#render-output');
+
+  for (let i = 0; i < inputs.length; i += 1) {
+    renderOutputDiv.innerHTML += `<div><p><strong>${inputs[i].label}</strong>  ${inputs[i].value}</p>`;
+  }
+};
+
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
   
   const allInputs = getAllInputs();
   console.log(allInputs);
+  renderOutput(allInputs);
+});
+
+resetBtn.addEventListener('click', (event) => {
+  const renderOutputDiv = document.querySelector('#render-output');
+
+  renderOutputDiv.innerHTML = '';
 })
 
 window.onload = () => {
-  selectState(estados);
+  selectState(states);
 }
