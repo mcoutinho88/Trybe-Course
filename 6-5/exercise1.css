@@ -1,0 +1,34 @@
+body {
+  font-size: 18px;
+  margin: 1.5rem;
+}
+h1 {
+  font-size: 1.6rem;
+}
+h2 {
+  font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 1rem;
+}
+
+@media (min-width: 700px) {
+  body {
+    background-color: rgba(102, 63, 60, 0.534);
+    font-size: 20px;
+    width: 80vw;
+    margin: 1rem auto;
+  }
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
