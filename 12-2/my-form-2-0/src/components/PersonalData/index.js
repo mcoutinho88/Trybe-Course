@@ -12,6 +12,7 @@ export default class PersonalData extends Component {
       cpf: '',
       address: '',
       city: '',
+      state: '',
       houseType: '',
     };
   }
@@ -25,6 +26,10 @@ export default class PersonalData extends Component {
     });
   }
   render() {
+    const states = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 
+  'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 
+  'RS', 'SC', 'SE', 'SP', 'TO'];
+
     return (
       <fieldset className="personal-info">
         <legend>Dados Pessoais</legend>
@@ -99,7 +104,11 @@ export default class PersonalData extends Component {
             Estado:
           </label>
 
-          <select name="state" id="state"></select>
+          <select name="state" id="state" onChange={this.handleChange}>
+            {states.map(state => (
+              <option key={state} value={state}>{state}</option>
+            ))}
+          </select>
         </div>
         <div className="field">
           <legend>Tipo de residência:</legend>
